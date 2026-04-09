@@ -26,14 +26,17 @@ const companyMeta: Record<string, { website: string; logo: string; logoClass: st
 export function Experience({ items }: ExperienceProps) {
   return (
     <section id="experience" className="reveal mx-auto max-w-6xl px-6 py-14">
-      <h2 className="mb-8 text-2xl font-semibold text-slate-100">Experience</h2>
-      <div className="space-y-5">
+      <div className="rounded-2xl border border-slate-800 bg-slate-900/40 p-6">
+        <h2 className="mb-7 text-center text-3xl font-semibold text-slate-100">
+          Professional <span className="text-pink-300">Experience</span>
+        </h2>
+        <div className="grid gap-4">
         {items.map((item) => {
           const company = companyMeta[item.company];
           return (
           <article
             key={`${item.company}-${item.period}`}
-            className="rounded-xl border border-slate-800 bg-slate-900/40 p-5 transition duration-300 hover:-translate-y-1 hover:border-sky-500/40"
+            className="rounded-xl border border-slate-800 bg-slate-950/70 p-5 transition duration-300 hover:-translate-y-1 hover:border-pink-400/40"
           >
             <div className="flex flex-wrap items-center justify-between gap-2">
               <div className="flex items-center gap-3">
@@ -60,7 +63,7 @@ export function Experience({ items }: ExperienceProps) {
                     href={company.website}
                     target="_blank"
                     rel="noreferrer"
-                    className="text-lg font-medium text-slate-100 transition hover:text-sky-300"
+                    className="text-lg font-medium text-slate-100 transition hover:text-pink-300"
                   >
                     {item.company}
                   </a>
@@ -70,7 +73,7 @@ export function Experience({ items }: ExperienceProps) {
               </div>
               <span className="text-sm text-slate-400">{item.period}</span>
             </div>
-            <p className="mt-1 text-sky-300">{item.role}</p>
+            <p className="mt-1 text-pink-300">{item.role}</p>
             <p className="mt-3 text-slate-300">{item.highlight}</p>
             {item.details?.length ? (
               <ul className="mt-3 list-disc space-y-1 pl-5 text-slate-300">
@@ -82,6 +85,7 @@ export function Experience({ items }: ExperienceProps) {
           </article>
         );
         })}
+        </div>
       </div>
     </section>
   );

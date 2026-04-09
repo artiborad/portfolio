@@ -2,7 +2,7 @@ const navItems = [
   { label: 'Skills', href: '#skills' },
   { label: 'Experience', href: '#experience' },
   { label: 'Projects', href: '#projects' },
-  { label: 'Achievements', href: '#cover-letter' },
+  { label: 'Education', href: '#education' },
   { label: 'Contact', href: '#contact' },
 ];
 
@@ -16,7 +16,7 @@ export function Navbar() {
         <ul className="hidden items-center gap-6 md:flex">
           {navItems.map((item) => (
             <li key={item.href}>
-              <a href={item.href} className="text-sm text-slate-300 transition hover:text-sky-300">
+              <a href={item.href} className="text-sm text-slate-300 transition hover:text-pink-300">
                 {item.label}
               </a>
             </li>

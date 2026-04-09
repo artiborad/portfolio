@@ -5,13 +5,12 @@ import { Navbar } from './components/Navbar/Navbar';
 import { Experience } from './components/Experience/Experience';
 import { Projects } from './components/Projects/Projects';
 import { Skills } from './components/Skills/Skills';
-import { CoverLetter } from './components/CoverLetter/CoverLetter';
+import { Education } from './components/Education/Education';
 import { Contact } from './components/Contact/Contact';
-import { AiChat } from './components/AiChat/AiChat';
+import { Footer } from './components/Footer/Footer';
 import type { ExperienceItem, Project } from './types';
 
 function App() {
-  const [chatOpen, setChatOpen] = useState(false);
   const [experience, setExperience] = useState<ExperienceItem[]>([]);
   const [projects, setProjects] = useState<Project[]>([]);
   const [loadError, setLoadError] = useState('');
@@ -53,16 +52,16 @@ function App() {
   return (
     <main className="min-h-screen bg-slate-950">
       <Navbar />
-      <div className="mx-auto max-w-7xl">
+      <div className="mx-auto max-w-screen-2xl">
         <Hero />
         {loadError ? <p className="px-6 text-rose-300">{loadError}</p> : null}
         <Experience items={experience} />
         <Projects projects={projects} />
         <Skills />
-        <CoverLetter />
+        <Education />
         <Contact />
       </div>
-      <AiChat open={chatOpen} onToggle={() => setChatOpen((prev) => !prev)} />
+      <Footer />
     </main>
   );
 }

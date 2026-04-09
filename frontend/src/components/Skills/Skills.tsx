@@ -26,13 +26,13 @@ export function Skills() {
     <section id="skills" className="reveal mx-auto max-w-6xl px-6 py-14">
       <div className="rounded-2xl border border-slate-800 bg-slate-900/40 p-6">
         <h2 className="mb-7 text-center text-3xl font-semibold text-slate-100">
-          Technical <span className="text-sky-400">Skills</span>
+          Technical <span className="text-pink-300">Skills</span>
         </h2>
         <div className="grid gap-4 md:grid-cols-2">
           {skillGroups.map((group) => (
             <article key={group.title} className="rounded-xl border border-slate-800 bg-slate-950/70 p-4">
               <div className="mb-3 flex items-center gap-2">
-                <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-sky-500/10 text-sky-300">
+                <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-pink-500/10 text-pink-300">
                   {group.icon}
                 </span>
                 <h3 className="font-medium text-slate-100">{group.title}</h3>

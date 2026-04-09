@@ -61,6 +61,14 @@ Projects:
 - Built APIs to track and manage consignments across the distribution lifecycle.
 - Designed logistics workflows similar to large-scale transport platforms.
 
+7) SportEco (Sports Management Web App):
+- Built backend support for player management and community workflows.
+- Implemented integrations for payments, notifications, and event-focused modules.
+
+8) Appie (Job Portal with Chat and Filtering):
+- Developed job application APIs and WebSocket messaging for employer-candidate interactions.
+- Implemented advanced filtering and nearby candidate matching workflows.
+
 Technical Skills:
 Languages & Frameworks: JavaScript, TypeScript, Node.js, Express.js, NestJS, GraphQL, WebSockets
 Cloud & Infrastructure: AWS (Lambda, S3, SNS, Cognito), Docker, Microservices, System Design, REST APIs
@@ -183,6 +191,29 @@ export const PROJECTS: Project[] = [
     techStack: ['NestJS', 'Event-driven architecture', 'WebSockets', 'AWS SNS', 'PostgreSQL'],
     metric: 'Reduced ops query load by 40% across 500+ daily operations',
     details: ['Designed logistics workflows similar to large-scale transport platforms.'],
+  },
+  {
+    title: 'SportEco',
+    domain: 'Sports Management Web App',
+    description:
+      'Built backend capabilities for a sports community platform enabling player workflows, communication, and operations.',
+    techStack: ['Node.js', 'React Native Support APIs', 'Razorpay', 'Push Notifications', 'Event Management'],
+    metric: 'Improved player and organizer collaboration through a unified web-first experience',
+    details: [
+      'Supported player management, profile workflows, and app-level operations.',
+      'Integrated payment and communication flows for practical day-to-day use.',
+    ],
+  },
+  {
+    title: 'Appie',
+    domain: 'Job Portal with Chat and Filtering',
+    description: 'Developed job application APIs and WebSocket messaging to support real-time hiring conversations.',
+    techStack: ['Node.js', 'WebSockets', 'REST APIs', 'Advanced Filtering', 'Geo-based Matching'],
+    metric: 'Improved candidate discovery and recruiter response speed with real-time communication',
+    details: [
+      'Developed job application APIs and WebSocket channels for recruiter-candidate messaging.',
+      'Implemented advanced filtering and nearby candidate matching to improve relevant results.',
+    ],
   },
 ];
 
