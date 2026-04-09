@@ -34,7 +34,7 @@ export function CoverLetter() {
   };
 
   return (
-    <section id="cover-letter" className="mx-auto max-w-6xl px-6 py-14">
+    <section id="cover-letter" className="reveal mx-auto max-w-6xl px-6 py-14">
       <h2 className="mb-4 text-2xl font-semibold text-slate-100">AI Cover Letter Generator</h2>
       <textarea
         rows={8}

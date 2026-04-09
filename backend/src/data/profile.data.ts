@@ -4,6 +4,7 @@ export type Project = {
   description: string;
   techStack: string[];
   metric: string;
+  details?: string[];
 };
 
 export const PROFILE_CONTEXT = `
@@ -14,16 +15,51 @@ Phone: +91 7874509801
 Experience: 4+ years specializing in serverless AWS architectures, NestJS microservices, and real-time systems across logistics, real-estate, and e-commerce domains.
 
 Experience:
-1) Squillion Tech (2025–Present): Led backend for a logistics platform handling 10K+ daily shipments across 100+ RBAC users, achieving 99.9% uptime.
-2) Scriptus Solutions Pvt. Ltd (2022–2025): Built 15+ microservices in NestJS/AWS Lambda, cutting API response time by 25% and reducing infra costs by 20%.
-3) Ciphernutz IT Services (2021–2022): Built 20+ REST APIs and automated 5 third-party integrations, saving 10 hrs/week in manual ops.
-4) Glory Autotech (2020–2021): Built scalable backend APIs for automation and chatbot platforms, reducing manual task handling by 15% via scheduled jobs and notification pipelines.
+1) Squillion Tech (03/2025–Present), Senior Backend Developer:
+- Building and maintaining scalable backend APIs for enterprise logistics and vehicle management platforms.
+- Implemented RBAC with fine-grained permissions across multiple modules.
+- Designed and integrated AWS S3 image upload workflows with private/public bucket access.
+
+2) Scriptus Solutions Pvt. Ltd (08/2022–02/2025), Backend Developer:
+- Designed and developed scalable backend APIs using Node.js, NestJS, and AWS Lambda.
+- Implemented real-time communication via WebSockets/Socket.IO.
+- Built secure authentication and role-based access using JWT and AWS Cognito.
+- Optimized database queries to improve API performance and response times.
+- Reviewed and refactored team code to improve maintainability.
+
+3) Ciphernutz IT Services (12/2021–07/2022), Backend Developer:
+- Developed REST APIs using Node.js and Express.js.
+- Integrated third-party APIs and added Swagger documentation.
+- Implemented cron jobs and automated email notifications.
+
+4) Glory Autotech (2020–2021), Backend Developer:
+- Built backend APIs for automation and chatbot platforms.
+- Implemented scheduled tasks and notification workflows.
 
 Projects:
-1) Gigalty (Real Estate): Serverless AWS Lambda + API Gateway + WebSocket real-time chat for 1,000+ users with 40% lower backend costs.
-2) Cellular Shock (Bulk Electronics): High-throughput backend for 50,000+ product listings; PostgreSQL optimization handled 3x transaction spike with sub-200ms responses.
-3) Acumen (Vehicle Management): Multi-role vehicle lifecycle management with 5+ RBAC roles; reduced processing time per vehicle by 2 hours.
-4) Distribution (Transport): Event-driven consignment tracking with real-time logistics APIs across 500+ daily operations; cut ops query load by 40%.
+1) Gigalty (Real Estate Platform):
+- Designed database and APIs using AWS Lambda.
+- Implemented real-time buyer-owner chat using WebSockets.
+
+2) Cellular Shock (Bulk Electronics Platform):
+- Built backend from scratch for product listings and bulk orders.
+- Optimized database performance for high-volume transactions.
+
+3) Resume Done (Automated Job Search Platform):
+- Integrated third-party APIs and implemented web scraping using Puppeteer.
+
+4) Acumen VISTA (Logistics and Vehicle Management Platform):
+- Built a platform to streamline operations at Long Bennington with real-time tracking, scheduling, and reporting.
+- Implemented live vehicle tracking, allocation workflows, and lifecycle management from PDI/storage to distribution.
+- Added automated reporting and role-based access controls to improve operational visibility and secure data handling.
+
+5) RMS (Resource Management System):
+- Managed vehicle-related jobs and workflows by integrating Apex RMS with the internal platform.
+- Built and maintained APIs for job status updates, assignments, and lifecycle tracking.
+
+6) Distribution System (Transport Management):
+- Built APIs to track and manage consignments across the distribution lifecycle.
+- Designed logistics workflows similar to large-scale transport platforms.
 
 Technical Skills:
 Languages & Frameworks: JavaScript, TypeScript, Node.js, Express.js, NestJS, GraphQL, WebSockets
@@ -38,31 +74,47 @@ B.Tech in Computer Engineering, Uka Tarsadiya University, CGPA 9.01 (2019–2022
 export const EXPERIENCE = [
   {
     company: 'Squillion Tech',
-    period: '2025–Present',
+    period: '03/2025–Present',
     role: 'Senior Backend Developer',
-    highlight:
-      'Led backend for a logistics platform handling 10K+ daily shipments across 100+ RBAC users, achieving 99.9% uptime.',
+    highlight: 'Building and maintaining scalable backend APIs for enterprise logistics and vehicle management platforms.',
+    details: [
+      'Implemented role-based access control (RBAC) with fine-grained permissions across multiple modules.',
+      'Designed and integrated AWS S3 image uploads with private and public bucket access.',
+      'Supported logistics workloads handling 10K+ daily shipments across 100+ RBAC users with 99.9% uptime.',
+    ],
   },
   {
     company: 'Scriptus Solutions Pvt. Ltd',
-    period: '2022–2025',
+    period: '08/2022–02/2025',
     role: 'Backend Developer',
-    highlight:
-      'Built 15+ microservices in NestJS/AWS Lambda, cutting API response time by 25% and reducing infra costs by 20%.',
+    highlight: 'Designed and developed scalable backend APIs using Node.js, NestJS, and AWS Lambda.',
+    details: [
+      'Implemented real-time communication using WebSockets and Socket.IO.',
+      'Built secure authentication and role-based access using JWT and AWS Cognito.',
+      'Optimized database queries, improving API performance and response time.',
+      'Reviewed and refactored team code to improve maintainability.',
+    ],
   },
   {
     company: 'Ciphernutz IT Services',
-    period: '2021–2022',
+    period: '12/2021–07/2022',
     role: 'Backend Developer',
-    highlight:
-      'Built 20+ REST APIs and automated 5 third-party integrations, saving 10 hrs/week in manual operations.',
+    highlight: 'Developed REST APIs using Node.js and Express.js.',
+    details: [
+      'Integrated third-party APIs and added Swagger documentation.',
+      'Implemented cron jobs and automated email notifications.',
+      'Delivered 20+ REST APIs and automated 5 integrations, saving ~10 hours/week in manual operations.',
+    ],
   },
   {
     company: 'Glory Autotech',
     period: '2020–2021',
     role: 'Backend Developer',
-    highlight:
-      'Built scalable backend APIs for automation and chatbot platforms, reducing manual task handling by 15%.',
+    highlight: 'Built backend APIs for automation and chatbot platforms.',
+    details: [
+      'Implemented scheduled tasks and notification workflows.',
+      'Reduced manual task handling by approximately 15% through automation.',
+    ],
   },
 ];
 
@@ -70,34 +122,67 @@ export const PROJECTS: Project[] = [
   {
     title: 'Gigalty',
     domain: 'Real Estate Platform',
-    description:
-      'Designed a serverless real-estate platform on AWS Lambda + API Gateway with WebSocket-based real-time chat.',
+    description: 'Designed database and APIs using AWS Lambda for a modern real-estate platform.',
     techStack: ['NestJS', 'AWS Lambda', 'API Gateway', 'WebSockets', 'PostgreSQL'],
     metric: '1,000+ users served with 40% lower backend costs',
+    details: [
+      'Implemented real-time buyer-owner chat using WebSockets.',
+      'Built scalable APIs to support property workflows and listing interactions.',
+    ],
   },
   {
     title: 'Cellular Shock',
-    domain: 'Bulk Electronics',
-    description:
-      'Engineered a high-throughput backend managing 50,000+ product listings with PostgreSQL query and indexing optimization.',
+    domain: 'Bulk Electronics Platform',
+    description: 'Built backend from scratch for product listings and bulk order workflows.',
     techStack: ['Node.js', 'PostgreSQL', 'TypeORM', 'REST APIs', 'Docker'],
     metric: 'Handled 3x transaction spike with sub-200ms responses',
+    details: [
+      'Optimized PostgreSQL queries and indexing for high-volume transactions.',
+      'Improved system reliability for peak order throughput scenarios.',
+    ],
+  },
+  {
+    title: 'Resume Done',
+    domain: 'Automated Job Search Platform',
+    description: 'Built automation pipelines for job discovery and matching workflows.',
+    techStack: ['Node.js', 'Puppeteer', 'Third-party APIs', 'REST APIs'],
+    metric: 'Reduced manual job-search effort via end-to-end automation',
+    details: ['Integrated third-party APIs and implemented web scraping using Puppeteer.'],
   },
   {
     title: 'Acumen',
-    domain: 'Vehicle Management',
+    domain: 'Vehicle and Compound Management System',
     description:
-      'Built a multi-role vehicle lifecycle management system with granular RBAC from procurement to disposal.',
+      'Acumen VISTA is a logistics and vehicle management platform built to streamline operations at Long Bennington through real-time tracking, allocation, scheduling, and reporting.',
     techStack: ['NestJS', 'RBAC', 'MySQL', 'JWT Auth', 'Microservices'],
     metric: 'Cut processing time per vehicle by 2 hours',
+    details: [
+      'Real-Time Tracking: Monitored vehicles across the supply chain with live GPS and status updates.',
+      'Optimized Scheduling: Implemented intelligent planning tools for efficient resource allocation.',
+      'Vehicle Management: Covered comprehensive PDI, storage, and distribution tracking.',
+      'Automated Reporting: Generated performance reports and operational insights.',
+      'User-Friendly Interface: Enabled access across desktop and mobile workflows.',
+      'Security: Enforced role-based permissions to ensure secure access and data isolation.',
+    ],
   },
   {
-    title: 'Distribution',
-    domain: 'Transport Platform',
-    description:
-      'Built an event-driven consignment tracking system on real-time logistics APIs for end-to-end shipment visibility.',
+    title: 'RMS',
+    domain: 'Resource Management System',
+    description: 'Integrated Apex RMS with internal systems to manage vehicle-related operations.',
+    techStack: ['Node.js', 'NestJS', 'Apex RMS Integration', 'REST APIs'],
+    metric: 'Improved job assignment and status visibility across lifecycle stages',
+    details: [
+      'Managed vehicle-related jobs and workflows by integrating Apex RMS with the internal platform.',
+      'Built and maintained APIs for job status updates, assignments, and lifecycle tracking.',
+    ],
+  },
+  {
+    title: 'Distribution System',
+    domain: 'Transport Management System',
+    description: 'Built APIs to track and manage consignments across the full distribution lifecycle.',
     techStack: ['NestJS', 'Event-driven architecture', 'WebSockets', 'AWS SNS', 'PostgreSQL'],
     metric: 'Reduced ops query load by 40% across 500+ daily operations',
+    details: ['Designed logistics workflows similar to large-scale transport platforms.'],
   },
 ];
 

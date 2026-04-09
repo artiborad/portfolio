@@ -1,6 +1,6 @@
 export function Contact() {
   return (
-    <section id="contact" className="mx-auto max-w-6xl px-6 py-14">
+    <section id="contact" className="reveal mx-auto max-w-6xl px-6 py-14">
       <h2 className="mb-5 text-2xl font-semibold text-slate-100">Contact</h2>
       <div className="rounded-xl border border-slate-800 bg-slate-900/40 p-5 text-slate-200">
         <p>Email: <a className="text-sky-300" href="mailto:artiborad0812@gmail.com">artiborad0812@gmail.com</a></p>

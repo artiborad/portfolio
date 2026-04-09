@@ -3,6 +3,7 @@ export type ExperienceItem = {
   period: string;
   role: string;
   highlight: string;
+  details?: string[];
 };
 
 export type Project = {
@@ -11,4 +12,5 @@ export type Project = {
   description: string;
   techStack: string[];
   metric: string;
+  details?: string[];
 };

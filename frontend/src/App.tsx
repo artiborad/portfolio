@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { getJson } from './api';
 import { Hero } from './components/Hero/Hero';
+import { Navbar } from './components/Navbar/Navbar';
 import { Experience } from './components/Experience/Experience';
 import { Projects } from './components/Projects/Projects';
 import { Skills } from './components/Skills/Skills';
@@ -31,10 +32,29 @@ function App() {
     void load();
   }, []);
 
+  useEffect(() => {
+    const revealElements = document.querySelectorAll<HTMLElement>('.reveal');
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 },
+    );
+
+    revealElements.forEach((element) => observer.observe(element));
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <main className="min-h-screen bg-slate-950">
+      <Navbar />
       <div className="mx-auto max-w-7xl">
-        <Hero onAskAi={() => setChatOpen(true)} />
+        <Hero />
         {loadError ? <p className="px-6 text-rose-300">{loadError}</p> : null}
         <Experience items={experience} />
         <Projects projects={projects} />
