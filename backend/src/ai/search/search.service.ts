@@ -12,6 +12,7 @@ export class SearchService implements OnModuleInit {
   private readonly model: ChatOpenAI;
   private readonly pool: Pool | null;
   private pgReady = false;
+  private pgInitStarted = false;
 
   constructor(configService: ConfigService) {
     const apiKey = configService.get<string>('OPENAI_API_KEY');
@@ -47,9 +48,24 @@ export class SearchService implements OnModuleInit {
     this.pool = databaseUrl ? new Pool({ connectionString: databaseUrl }) : null;
   }
 
-  async onModuleInit() {
+  onModuleInit() {
     if (!this.pool) {
       this.logger.warn('DATABASE_URL missing. Semantic search will fallback to in-memory mode.');
+      return;
+    }
+    this.startPgInitInBackground();
+  }
+
+  private startPgInitInBackground() {
+    if (!this.pool || this.pgInitStarted) {
+      return;
+    }
+    this.pgInitStarted = true;
+    void this.initializePgVector();
+  }
+
+  private async initializePgVector() {
+    if (!this.pool) {
       return;
     }
 
@@ -81,6 +97,7 @@ export class SearchService implements OnModuleInit {
       }
 
       this.pgReady = true;
+      this.logger.log('pgvector project embeddings are ready.');
     } catch (error) {
       this.logger.warn(`pgvector init failed, using fallback search. ${String(error)}`);
       this.pgReady = false;
