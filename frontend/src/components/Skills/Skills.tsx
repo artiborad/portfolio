@@ -1,27 +1,6 @@
-export function Skills() {
-  const skillGroups = [
-    {
-      title: 'Languages & Frameworks',
-      icon: '</>',
-      items: ['JavaScript', 'TypeScript', 'Node.js', 'Express.js', 'NestJS', 'GraphQL', 'WebSockets'],
-    },
-    {
-      title: 'Cloud & Infrastructure',
-      icon: '🌐',
-      items: ['AWS (Lambda, S3, SNS, Cognito)', 'Docker', 'Microservices', 'System Design', 'REST APIs'],
-    },
-    {
-      title: 'Databases & ORMs',
-      icon: '🗄️',
-      items: ['MongoDB', 'PostgreSQL', 'MySQL', 'TypeORM'],
-    },
-    {
-      title: 'Tools',
-      icon: '🛠️',
-      items: ['Git', 'Swagger', 'Postman', 'Jira', 'Puppeteer', 'RBAC', 'Authentication', 'API Optimization'],
-    },
-  ];
+import { SKILL_GROUPS } from '../../profile.data';
 
+export function Skills() {
   return (
     <section id="skills" className="reveal mx-auto max-w-6xl px-6 py-14">
       <div className="rounded-2xl border border-slate-800 bg-slate-900/40 p-6">
@@ -29,7 +8,7 @@ export function Skills() {
           Technical <span className="text-pink-300">Skills</span>
         </h2>
         <div className="grid gap-4 md:grid-cols-2">
-          {skillGroups.map((group) => (
+          {SKILL_GROUPS.map((group) => (
             <article key={group.title} className="rounded-xl border border-slate-800 bg-slate-950/70 p-4">
               <div className="mb-3 flex items-center gap-2">
                 <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-pink-500/10 text-pink-300">
